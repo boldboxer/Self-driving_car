@@ -9,7 +9,7 @@ class Road{
 
         const infinity=1000000;
         this.top=-infinity;
-        this.bottom=+ infinity;
+        this.bottom=infinity;
 
         const topLeft={x:this.left,y:this.top};
         const topRight={x:this.right,y:this.top};
@@ -20,12 +20,13 @@ class Road{
             [topRight,bottomRight]
         ];
     }
-    
+
     getLaneCenter(laneIndex){
         const laneWidth=this.width/this.laneCount;
         return this.left+laneWidth/2+
             Math.min(laneIndex,this.laneCount-1)*laneWidth;
     }
+
     draw(ctx){
         ctx.lineWidth=5;
         ctx.strokeStyle="white";
@@ -36,12 +37,12 @@ class Road{
                 this.right,
                 i/this.laneCount
             );
-           
-                ctx.setLineDash([20,20]);
-                ctx.beginPath();
-                ctx.moveTo(x,this.top);
-                ctx.lineTo(x,this.bottom);
-                ctx.stroke();
+            
+            ctx.setLineDash([20,20]);
+            ctx.beginPath();
+            ctx.moveTo(x,this.top);
+            ctx.lineTo(x,this.bottom);
+            ctx.stroke();
         }
 
         ctx.setLineDash([]);

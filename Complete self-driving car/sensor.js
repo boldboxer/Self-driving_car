@@ -18,7 +18,7 @@ class Sensor{
                     this.rays[i],
                     roadBorders,
                     traffic
-                    )
+                )
             );
         }
     }
@@ -57,8 +57,8 @@ class Sensor{
             return null;
         }else{
             const offsets=touches.map(e=>e.offset);
-            const minoffset=Math.min(...offsets);
-            return touches.find(e=>e.offset==minoffset);
+            const minOffset=Math.min(...offsets);
+            return touches.find(e=>e.offset==minOffset);
         }
     }
 
@@ -88,6 +88,7 @@ class Sensor{
             if(this.readings[i]){
                 end=this.readings[i];
             }
+
             ctx.beginPath();
             ctx.lineWidth=2;
             ctx.strokeStyle="yellow";
@@ -114,5 +115,5 @@ class Sensor{
             );
             ctx.stroke();
         }
-    }      
+    }        
 }
