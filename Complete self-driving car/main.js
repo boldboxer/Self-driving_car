@@ -16,19 +16,19 @@ if(localStorage.getItem("bestBrain")){
         cars[i].brain=JSON.parse(
             localStorage.getItem("bestBrain"));
         if(i!=0){
-            NeuralNetwork.mutate(cars[i].brain,0.1);
+            NeuralNetwork.mutate(cars[i].brain,0.3);
         }
     }
 }
 
 const traffic=[
-    new Car(road.getLaneCenter(1),-100,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(0),-300,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(2),-300,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(0),-500,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(1),-500,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(1),-700,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(2),-700,30,50,"DUMMY",2),
+    new Car(road.getLaneCenter(1),-100,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(0),-300,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(2),-300,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(0),-500,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(1),-500,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(1),-700,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(2),-700,30,50,"DUMMY",2,getRandomColor()),
 ];
 
 animate();
